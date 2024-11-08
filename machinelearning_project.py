@@ -3,7 +3,7 @@ import pandas as pd
 import datetime as dt
 import requests
 import numpy as np
-#import pandas_datareader as pdr
+import mysql.connector
 
 
 ###############
@@ -11,17 +11,54 @@ import numpy as np
 ###############
 
 
-sp500 = yf.Ticker('^GSPC')
+# 設定連接資訊
+db = mysql.connector.connect(
+    host="192.168.50.211",  # 電腦 A 的 IP 位址
+    user="user_2",          # 您在電腦 A 上授權的使用者名稱
+    password="12345678",  # 該使用者的密碼
+    database="machinelearning"  # 目標資料庫名稱
+)
 
-print(sp500.info)
+# 建立游標
+cursor = db.cursor()
+
+# 測試查詢
+query = "SELECT * FROM sp500_daily"
+cursor.execute(query)
+
+# 取得查詢結果
+results = cursor.fetchall()
+
+# 獲取欄位名稱
+column_names = [i[0] for i in cursor.description]
+
+# 關閉游標和連接
+cursor.close()
+db.close()
+
+# 將查詢結果轉換成 DataFrame
+df = pd.DataFrame(results, columns=column_names)
+
+#將日期轉成datetime格式
+df['date'] = pd.to_datetime(df['date'])
+
+#將日期化為索引
+df.set_index('date', inplace=True)
+
+df.index = df.index.tz_localize('America/New_York')
+
+#sp500 = yf.Ticker('^GSPC')
+
+#print(sp500.info)
 
 
-df = sp500.history(start = "2000-01-01", end = "2024-01-01")
-print(df)
-df.index
+#df = sp500.history(start = "2000-01-01", end = "2024-01-01")
+#print(df)
+#df.index
 Test = df.loc['2000-01-01 00:00:00-05:00':'2024-01-01 00:00:00-05:00']
-SP500 = Test[['Close']]
+SP500 = Test[['close_price']]
 SP500 = SP500.reset_index()
+SP500 = SP500.rename(columns={'date': 'Date'})
 
 
 #SP500
