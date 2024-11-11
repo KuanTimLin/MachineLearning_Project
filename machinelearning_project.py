@@ -47,14 +47,7 @@ df.set_index('date', inplace=True)
 
 df.index = df.index.tz_localize('America/New_York')
 
-#sp500 = yf.Ticker('^GSPC')
 
-#print(sp500.info)
-
-
-#df = sp500.history(start = "2000-01-01", end = "2024-01-01")
-#print(df)
-#df.index
 Test = df.loc['2000-01-01 00:00:00-05:00':'2024-01-01 00:00:00-05:00']
 SP500 = Test[['close_price']]
 SP500 = SP500.reset_index()
@@ -68,10 +61,10 @@ SP500 = SP500.rename(columns={'date': 'Date'})
 ##############################
 
 
-# Replace with your FRED API key
+# 設定API KEY
 api_key = '655c7c4de3e1906ab64007617f6290fb'
 
-# Define the FRED API endpoint and the series ID for 10-year Treasury yield
+# 設定美債10年債卷利率的FRED API資料
 series_id = 'DGS10'
 url = f'https://api.stlouisfed.org/fred/series/observations'
 params = {
@@ -84,7 +77,6 @@ params = {
 
 # Send the request to the FRED API
 response = requests.get(url, params=params)
-# Check if the request was successful
 # 檢查請求是否成功
 if response.status_code == 200:
     data = response.json()
