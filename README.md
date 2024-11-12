@@ -15,31 +15,32 @@
 
 建立MySQL資料庫
 
-![建立mysql](image/建立mysql.png)
+<img src="image/建立mysql.png" alt="建立mysql" width="400"/>
+
 
 從Yahoo Finance API串接S&P500股價資料
 
-![sp500_Load](image/sp500_Load.png)
+<img src="image/sp500_Load.png" alt="sp500_Load" width="400"/>
 
 《Transform》
 
 在python裡選定所需欄位、轉換日期欄位格式
 
-![sp500_transform](image/sp500_transform.png)
+<img src="image/sp500_transform.png" alt="sp500_transform" width="400"/>
 
 《Load》
 
 將資料用python加載到先前建立的MySQL資料庫
 
-![python腳本](image/python腳本.png)
+<img src="image/python腳本.png" alt="python腳本" width="400"/>
 
 撰寫bash腳本執行python腳本，每日自動獲取最新S&P500股價
 
-![bash腳本](image/bash腳本.png)
+<img src="image/bash腳本.png" alt="bash腳本" width="400"/>
 
 撰寫bat腳本使用每日定期執行bash腳本
 
-![windows_bat](image/windows_bat.png)
+<img src="image/windows_bat.png" alt="windows_bat" width="400"/>
 
 ### 總經因子資料
 
@@ -47,21 +48,25 @@
 
 從FRED API獲取總經因子資料。
 
-![總經因子資料](image/總經因子資料.png)
+<img src="image/總經因子資料.png" alt="總經因子資料" width="400"/>
 
 《Transform》
 
 在python裡將資料欄位和日期欄位做轉換、清洗、合併。
 
-![總經因子清洗](image/總經因子清洗.png)
+<img src="image/總經因子清洗.png" alt="總經因子清洗" width="400"/>
 
 《Load》
 
 直接匯集成一張dataframe灌進模型裡。
 
-![合併資料](image/合併資料.png)
+<img src="image/合併資料.png" alt="合併資料" width="400"/>
 
 ## 前端機器學習模型
+
+![模型簡易心智圖](image/模型簡易心智圖.JPEG)
+(模型程式碼結構簡易示意圖)
+
 
 這裡機器學習算法使用"多元迴歸"。
 
@@ -87,19 +92,19 @@ S&P收盤價
 
 S&P500股價資料從遠端Windows主機的MySQL截取
 
-![S&P_500資料](image/S&P_500資料.png)
+<img src="image/S&P_500資料.png" alt="S&P_500資料" width="400"/>
 
 使用statsmodels套件進行機器學習統計分析
 
-![多元回歸](image/多元回歸.png)
+<img src="image/多元回歸.png" alt="多元回歸" width="400"/>
 
 結果
 
-![多元回歸結果](image/多元回歸結果.png)
+<img src="image/多元回歸結果.png" alt="多元回歸結果" width="600"/>
 
 圖
 
-![圖](image/圖.png)
+<img src="image/圖.png" alt="圖" width="600"/>
 
 
 解釋：
