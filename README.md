@@ -9,22 +9,33 @@
 
 《Extract》
 
-
 建立MySQL資料庫
 
+![建立mysql](image/建立mysql.png)
 
 從Yahoo Finance API串接S&P500股價資料
 
+![sp500_Load](image/sp500_Load.png)
 
 《Transform》
 
 在python裡選定所需欄位、轉換日期欄位格式
 
+![sp500_transform](image/sp500_transform.png)
+
 《Load》
 
 將資料用python加載到先前建立的MySQL資料庫
 
-撰寫bash腳本執行python腳本，每日自動定時獲取最新S&P500股價
+![python腳本](image/python腳本.png)
+
+撰寫bash腳本執行python腳本，每日自動獲取最新S&P500股價
+
+![bash腳本](image/bash腳本.png)
+
+撰寫bat腳本使用每日定期執行bash腳本
+
+![windows_bat](image/windows_bat.png)
 
 ### 總經因子資料
 
