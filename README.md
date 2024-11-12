@@ -43,14 +43,19 @@
 
 從FRED API獲取總經因子資料。
 
+![總經因子資料](image/總經因子資料.png)
+
 《Transform》
 
-在python裡將資料欄位和四期欄位做轉換、清洗、合併。
+在python裡將資料欄位和日期欄位做轉換、清洗、合併。
+
+![總經因子清洗](image/總經因子清洗.png)
 
 《Load》
 
 直接匯集成一張dataframe灌進模型裡。
 
+![合併資料](image/合併資料.png)
 
 ## 前端機器學習模型
 
@@ -78,19 +83,20 @@ S&P收盤價
 
 S&P500股價資料從遠端Windows主機的MySQL截取
 
-
-總經因子直接串接FRED API後進行清洗和轉換
-
-
-將全部資料整理成相容格式並合併成一張dataframe
-
+![S&P_500資料](image/S&P_500資料.png)
 
 使用statsmodels套件進行機器學習統計分析
 
+![多元回歸](image/多元回歸.png)
 
 結果
 
+![多元回歸結果](image/多元回歸結果.png)
+
 圖
+
+![圖](image/圖.png)
+
 
 解釋：
 
