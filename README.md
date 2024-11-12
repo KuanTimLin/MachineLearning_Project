@@ -5,6 +5,10 @@
 ## 後端Data ETL pipeline
 資料總共分成兩大部分:S&P500股價資料、總經因子資料。
 
+![心智圖](image/心智圖.jpeg)
+(Data ETL pipeline示意圖)
+
+
 ### S&P500股價資料
 
 《Extract》
