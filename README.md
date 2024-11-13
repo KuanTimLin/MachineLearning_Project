@@ -31,7 +31,7 @@
 
 ### S&P500股價資料
 
-《Extract》
+#### 《Extract》
 
 建立MySQL資料庫
 
@@ -42,13 +42,13 @@
 
 <img src="image/sp500_Load.png" alt="sp500_Load" width="400"/>
 
-《Transform》
+#### 《Transform》
 
 在python裡選定所需欄位、轉換日期欄位格式
 
 <img src="image/sp500_transform.png" alt="sp500_transform" width="400"/>
 
-《Load》
+#### 《Load》
 
 將資料用python加載到先前建立的MySQL資料庫
 
@@ -64,19 +64,19 @@
 
 ### 總經因子資料
 
-《Extract》
+#### 《Extract》
 
 從FRED API獲取總經因子資料。
 
 <img src="image/總經因子資料.png" alt="總經因子資料" width="400"/>
 
-《Transform》
+#### 《Transform》
 
 在python裡將資料欄位和日期欄位做轉換、清洗、合併。
 
 <img src="image/總經因子清洗.png" alt="總經因子清洗" width="400"/>
 
-《Load》
+#### 《Load》
 
 直接匯集成一張dataframe灌進模型裡。
 
@@ -88,13 +88,18 @@
 (模型程式碼結構簡易示意圖)
 
 
+使用GitHub進行雲端的版本控制。
+
+<img src="image/GIT版本控制.png" alt="GIT版本控制" width="500"/>
+
+
 這裡機器學習算法使用"多元迴歸"。
 
-Y = β0 + β1X1 + β2X2 + β3X3 + β4X4 + β5X5
+#### Y = β0 + β1X1 + β2X2 + β3X3 + β4X4 + β5X5
 
 #### 《目標變數》:
 
-##### S&P收盤價
+##### S&P500收盤價
 
 #### 《自變數》:
 
@@ -134,7 +139,7 @@ S&P500股價資料從遠端Windows主機的MySQL截取
 #### 模型統計結果
 <img src="image/多元回歸結果.png" alt="多元回歸結果" width="600"/>
 
-Predict_Value v.s. Real_Value圖中表示估計值和實際值之間有顯著趨勢相關。
+Predict_Value v.s. Real_Value圖中表示模型之具有對S&P500股價的預判能力。
 從上圖可以得知各因子的P_Value接小於0.05，調整後的 R²達到0.957，
 各項指標皆表示各因子對S&P500股價都有強烈的解釋能力。
 但是，Durbin-Watson檢驗數值趨近於0，
