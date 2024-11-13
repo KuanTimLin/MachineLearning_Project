@@ -139,7 +139,9 @@ S&P500股價資料從遠端Windows主機的MySQL截取
 #### 模型統計結果
 <img src="image/多元回歸結果.png" alt="多元回歸結果" width="600"/>
 
-Predict_Value v.s. Real_Value圖中表示模型之具有對S&P500股價的預判能力。
+#### 結論
+
+Predict_Value v.s. Real_Value圖中表示模型具有對S&P500股價的預判能力。
 從上圖可以得知各因子的P_Value接小於0.05，調整後的 R²達到0.957，
 各項指標皆表示各因子對S&P500股價都有強烈的解釋能力。
 但是，Durbin-Watson檢驗數值趨近於0，
