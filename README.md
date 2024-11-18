@@ -33,9 +33,25 @@
 
 #### 《Extract》
 
-建立MySQL資料庫
+建立MySQL資料庫、資料表
+
+<img src="image/資料庫.png" alt="資料庫" width="400"/>
+
+<img src="image/Table創立.png" alt="Table創立" width="400"/>
+
+<img src="image/describe表.png" alt="describe表" width="400"/>
 
 <img src="image/建立mysql.png" alt="建立mysql" width="400"/>
+
+將日期設定為index增進查詢效率
+
+<img src="image/設立index.png" alt="設立index" width="400"/>
+
+<img src="image/show_index.png" alt="show_index" width="400"/>
+
+用explain函數檢查query是否運用到index
+
+<img src="image/index效能.png" alt="index效能" width="400"/>
 
 
 從Yahoo Finance API串接S&P500股價資料
