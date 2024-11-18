@@ -58,6 +58,8 @@
 
 <img src="image/sp500_Load.png" alt="sp500_Load" width="400"/>
 
+<img src="image/sp500_table.png" alt="sp500_table" width="400"/>
+
 #### 《Transform》
 
 在python裡選定所需欄位、轉換日期欄位格式
